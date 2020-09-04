@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Первая вёрстка</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="block__img">
+              <!--   <img src="img/bg.jpg" alt="bg"> -->
+                <img src="img/logo.svg" alt="logo" class="block__img-logo">
+            </div>
+            <div class="block__info">
+
+                <h1 class="blockinfo__title">Get iintoo it today</h1>
+                <h2 class="blockinfoo_subtitle"><strong>There</strong> is no charge or obligation upon registration</h2>
+
+                <div class="reg__social">
+                    <div class="reg__block">
+                        <img src="img/facebook.svg" alt="fb logo" class="reg__fb-logo">
+                        Register with Facebook
+                    </div>
+
+                    <div class="reg__block reg__block-link">
+                        <img src="img/linkedin.svg" alt="linkedin logo" class="reg__link-logo">
+                        Register with LinkedIn
+                    </div>
+                </div>
+
+                <div class="choice">or</div>
+
+                <form action="POST" class="regform">
+
+                    <div class="regform__input">
+
+                        <div class="regform__item">
+                            <input type="e-mail" id="regform__email" placeholder="email@domain.com" required>
+                            <label for="regform__email" class="regform__label">Email</label>
+                        </div>
+
+                        <div class="regform__item">
+                            <input type="phone" id="regform__phone" placeholder="+7(ххх) ххх хх хх" required>
+                            <label for="regform__phone" class="regform__label">Phone</label>
+                        </div>
+
+                    </div>
+
+                    <div class="regform__answer">
+                        <h3 class="regform__answer-title">What type or investor are you?</h3>
+                        <h4 class="regform__answer-subtitle">Select the type of investor you are below</h4>
+                    </div>
+
+                    <div class="regform__radio">
+                       
+                        <input type="radio" checked id="Individual" name="regform__radio"> 
+                        <label for="Individual">Individual</label>
+                        <span tooltip="I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common" flow="down"><span  class="regform__radio-info" >i</span></span>
+                        
+                        <input type="radio" id="Business" name="regform__radio">
+                        <label for="Business">Business</label>
+                        <span tooltip="I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common" flow="down"><span  class="regform__radio-info" >i</span></span>
+                        
+                        <input type="radio" id="IRA" name="regform__radio">
+                        <label for="IRA">IRA</label>
+                        <span tooltip="I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common" flow="down"><span  class="regform__radio-info" >i</span></span>
+                        
+                        <input type="radio" id="Trust" name="regform__radio">
+                        <label for="Trust">Trust </label>
+                        <span tooltip="I am a natural person investing on my own behalf as a sole owner, joint tenant, or tenant in common" flow="down"><span  class="regform__radio-info" >i</span></span>
+                        
+                    </div>
+
+                    <div class="regform__check">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">I agree to the terms and receiving notifications from intoo <a href="#">View full terms</a></label>
+                    </div>
+
+                    <input type="submit" value="Create Account" class="regform__submit">
+
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
