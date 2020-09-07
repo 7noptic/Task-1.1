@@ -34,6 +34,7 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    min-width: 320px;
 }
 
 img {
@@ -127,6 +128,26 @@ h4 {
 
     width: 140px;
     height: 30px;
+    transition: .5s;
+    animation: logoanimation 1.5s linear infinite;
+}
+
+@keyframes logoanimation {
+    from {
+        top: 45px;
+    }
+
+    to {
+        top: 45px;
+    }
+
+    50% {
+        top: 50px;
+    }
+}
+
+.block__img-logo:hover {
+    transform: rotate(360deg) scale(1.2);
 }
 
 .block__info {
@@ -298,6 +319,11 @@ h4 {
 .regform__radio {
     position: relative;
     margin-bottom: 90px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
 }
 
 .regform__radio input {
@@ -361,7 +387,7 @@ h4 {
     padding-left: 4px;
     padding-bottom: 10px;
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 3px;
 }
 
@@ -369,13 +395,15 @@ h4 {
 .regform__radio span {
     margin-right: 28px;
 }
-
-[tooltip] {
+.down{
+    cursor: pointer;
+}
+[data-tooltip] {
     position: relative;
 }
 
-[tooltip]::before,
-[tooltip]::after {
+[data-tooltip]::before,
+[data-tooltip]::after {
     font-family: 'Roboto', sans-serif;
     text-transform: none;
     font-size: 14px;
@@ -385,16 +413,17 @@ h4 {
     position: absolute;
     display: none;
     opacity: 0;
+    content: attr(data-tooltip);
 }
 
-[tooltip]::before {
+[data-tooltip]::before {
     content: '';
     border: 5px solid #EEE;
     z-index: 1001;
 }
 
-[tooltip]::after {
-    content: attr(tooltip);
+[data-tooltip]::after {
+    content: attr(data-tooltip);
     width: 250px;
     height: 75px;
     overflow: hidden;
@@ -407,8 +436,8 @@ h4 {
     z-index: 1000;
 }
 
-[tooltip]:hover::before,
-[tooltip]:hover::after {
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
     display: block;
 }
 
@@ -417,18 +446,18 @@ h4 {
     display: none !important;
 }
 
-[tooltip][flow^="down"]::before {
+[data-tooltip]::before {
     top: 100%;
     border-top-width: 0;
     border-bottom-color: #333;
 }
 
-[tooltip][flow^="down"]::after {
+[data-tooltip]::after {
     top: calc(100% + 5px);
 }
 
-[tooltip][flow^="down"]::before,
-[tooltip][flow^="down"]::after {
+[data-tooltip]::before,
+[data-tooltip]::after {
     left: 50%;
     transform: translate(-50%, .5em);
 }
@@ -447,8 +476,8 @@ h4 {
     }
 }
 
-[tooltip][flow^="down"]:hover::before,
-[tooltip][flow^="down"]:hover::after {
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
     animation: tooltips-vert 300ms ease-out forwards;
 }
 
@@ -504,12 +533,14 @@ h4 {
     .block__info {
         padding: 50px 30px;
     }
-    .reg__social{
+
+    .reg__social {
         flex-direction: column;
         justify-content: center;
     }
+
     .reg__block {
-	margin-bottom: 15px;
+        margin-bottom: 15px;
         width: 100%;
         display: -webkit-flex;
         display: -moz-flex;
@@ -517,26 +548,58 @@ h4 {
         display: -o-flex;
         display: flex;
         justify-content: center;
-}
-    .blockinfoo_subtitle{
+    }
+
+    .blockinfoo_subtitle {
         margin-bottom: 30px;
     }
-    .choice{
+
+    .choice {
         margin: 25px;
     }
-    .regform__answer-subtitle{
+
+    .regform__answer-subtitle {
         margin-bottom: 25px;
     }
-    .regform__check{
+
+    .regform__check {
         margin-bottom: 30px;
     }
-    .regform__input{
+
+    .regform__input {
         margin-bottom: 30px;
         flex-direction: column;
     }
+
     .regform__item {
-    
-    width: 100%;
-    margin-bottom: 15px;
+
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .regform__radio-info {
+
+        top: -19px;
+        left: 104px;
+    }
+
+    .regform__radio {
+
+        flex-direction: column;
+    }
+
+    .block__info {
+        padding: 10px 30px;
+    }
+
+    .choice {
+        margin: 10px;
+    }
+
+    .regform__submit {
+        padding: 15px 0;
+        width: 100%;
     }
 }
